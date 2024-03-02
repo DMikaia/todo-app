@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <picture id="bg-img">
+      <source
+        id="mobile-bg-img"
+        media="(max-width: 465px)"
+        srcset="images/bg-mobile-light.jpg"
+      />
+      <img id="desktop-bg-img" src="images/bg-desktop-light.jpg" />
+    </picture>
+
+    <header>
+      <h1>Todo</h1>
+      <svg id="theme" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+        <path
+          id="moon"
+          fill="#FFF"
+          fill-rule="evenodd"
+          d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+        />
+        <path
+          style="visibility: hidden"
+          id="sun"
+          fill="#FFF"
+          fill-rule="evenodd"
+          d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+        />
+      </svg>
+    </header>
+
+    <!-- Add dynamic number -->
+    <section id="container">
+      <div id="inputBox">
+        <span id="circle"></span>
+        <input type="text" id="todo-input" placeholder="Create a new todo..." />
+      </div>
+
+      <section id="container-body">
+        <div id="check-list">
+          <div class="check" id="check-1" draggable="true">
+            <input class="input-check" type="checkbox" id="1" />
+            <label for="1">Learning HTML & CSS</label>
+            <img class="cross check-1" src="images/icon-cross.svg" />
+          </div>
+          <div class="check" id="check-2" draggable="true">
+            <input class="input-check" type="checkbox" id="2" />
+            <label for="2">Setting up the theme mode</label>
+            <img class="cross check-2" src="images/icon-cross.svg" />
+          </div>
+          <div class="check" id="check-3" draggable="true">
+            <input class="input-check" type="checkbox" id="3" />
+            <label for="3">Starting the to do list</label>
+            <img class="cross check-3" src="images/icon-cross.svg" />
+          </div>
+        </div>
+
+        <div id="check-footer">
+          <p id="item-number"><span id="number">3</span> items left</p>
+
+          <div id="options">
+            <span class="active-options" id="all-task">All</span>
+            <span id="active-task">Active</span>
+            <span id="finished-task">Completed</span>
+          </div>
+
+          <p id="clear">Clear completed</p>
+        </div>
+      </section>
+    </section>
+
+    <p id="help">Drag and drop to reorder list</p>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">DMikaia</a>.
+    </div>
+
+    <script src="script/themeSwitch.js"></script>
+    <script src="script/addELement.js"></script>
+    <script src="script/removeClearElement.js"></script>
+    <script src="script/filterOption.js"></script>
+    <script src="script/dragAndDrop.js"></script>
+  </body>
+</html>

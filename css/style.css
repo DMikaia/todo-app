@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  /* Primary color */
+
+  --Bright-Blue: hsl(220, 98%, 61%);
+
+  /* Light Mode */
+
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Dark mode */
+
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+  --font-family: "Josefin Sans", sans-serif;
+  --font-size-1440: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--Very-Light-Grayish-Blue);
+  color: var(--Very-Light-Gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#bg-img {
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  height: 200px;
+}
+
+#desktop-bg-img {
+  width: 100%;
+  height: 200px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
+header h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+#theme {
+  cursor: pointer;
+}
+
+#container-body {
+  color: var(--Very-Dark-Grayish-Blue);
+  background-color: var(--Very-Light-Gray);
+  width: 400px;
+}
+
+#container-body label {
+  cursor: pointer;
+}
+
+#container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputBox {
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  background-color: var(--Very-Light-Gray);
+  width: 100%;
+  height: 40px;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+#circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: solid 1px var(--Light-Grayish-Blue);
+}
+
+#todo-input {
+  color: var(--Dark-Grayish-Blue);
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+
+#todo-input:is(:focus, :hover) {
+  outline: none;
+}
+
+#check-list {
+  width: 100%;
+  min-height: 150px;
+}
+
+.check {
+  cursor: grab;
+  z-index: 1;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  gap: 1rem;
+  display: flex;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  border-bottom: solid 1px var(--Light-Grayish-Blue);
+}
+
+.draggable {
+  filter: blur(0.5px);
+}
+
+.cross {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 20px;
+}
+
+.check:is(:hover, :focus) .cross {
+  display: block;
+}
+
+.input-check {
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--Light-Grayish-Blue);
+}
+
+.input-check:checked {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.input-check:checked ~ label {
+  color: var(--Light-Grayish-Blue);
+  text-decoration: line-through;
+}
+
+.input-check:checked::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  z-index: 2;
+}
+
+#check-footer {
+  border-radius: 0.25rem;
+  padding: 1rem 0.75rem;
+  font-size: 12px;
+  color: var(--Dark-Grayish-Blue);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#options {
+  display: flex;
+  justify-content: space-evenly;
+  width: 200px;
+  align-items: center;
+}
+
+#options span {
+  cursor: pointer;
+}
+
+#options span:is(:hover, :focus) {
+  color: var(--Bright-Blue);
+}
+
+.active-options {
+  color: var(--Bright-Blue);
+}
+
+#item-number,
+#clear {
+  cursor: pointer;
+  width: 100px;
+}
+
+#help {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.attribution {
+  color: black;
+  padding: 0.5rem;
+  width: 100%;
+  bottom: 0px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 465px) {
+  body {
+    justify-content: space-evenly;
+  }
+
+  header,
+  #container-body,
+  #inputBox {
+    width: 300px;
+  }
+
+  #check-footer {
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+
+  header,
+  #container-body,
+  #inputBox {
+    width: 700px;
+  }
+
+  #bg-img {
+    height: 300px;
+  }
+
+  #desktop-bg-img {
+    width: 100%;
+    height: 300px;
+  }
+}
